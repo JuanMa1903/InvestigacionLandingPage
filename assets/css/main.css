@@ -31,7 +31,7 @@
 
 .carousel {
 	width: 100%; /* Ajusta el ancho según tus necesidades */
-	height: 325px; /* Ajusta la altura según tus necesidades */
+	height: 250px; /* Ajusta la altura según tus necesidades */
 	overflow: hidden;
 	position: relative;
 	background-color: white;
