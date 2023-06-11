@@ -4,38 +4,65 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-function App(){}
-	window.onload = function(event) {
-		var app = new App();
-		window.app = app;
-	}
+// function App(){}
+// 	window.onload = function(event) {
+// 		var app = new App();
+// 		window.app = app;
+// 	}
 
-	App.prototype.processingButton = function(event) {
+// 	App.prototype.processingButton = function(event) {
 
-		const btn = event.currentTarget;
-		const carruselList = event.currentTarget.parentNode;
-		const track = event.currentTarget.parentNode.querySelector('#track');
-		const carrusel = track.querySelectorAll('.carrusel');
+// 		const btn = event.currentTarget;
+// 		const carruselList = event.currentTarget.parentNode;
+// 		const track = event.currentTarget.parentNode.querySelector('#track');
+// 		const carrusel = track.querySelectorAll('.carrusel');
 
-		const carruselWidth = carrusel[0].offsetWidth;
-		const trackWidth = track.offsetWidth;
-		const listWidth = carruselList.offsetWidth;
+// 		const carruselWidth = carrusel[0].offsetWidth;
+// 		const trackWidth = track.offsetWidth;
+// 		const listWidth = carruselList.offsetWidth;
 
-		track.style.left == ""  ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0,-2) * -1);
-		btn.dataset.button == "button-prev" ? prevAction(leftPosition, carruselWidth, track) : nextAction(leftPosition, trackWidth, listWidth, carruselWidth, track)
-	}
+// 		track.style.left == ""  ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0,-2) * -1);
+// 		btn.dataset.button == "button-prev" ? prevAction(leftPosition, carruselWidth, track) : nextAction(leftPosition, trackWidth, listWidth, carruselWidth, track)
+// 	}
 
-	let prevAction = (leftPosition, carruselWidth, track) => {
-		if (leftPosition > 0) {
-			track.style.left = `${-1 * (leftPosition - carruselWidth)}px`;
-		}
-	}
+// 	let prevAction = (leftPosition, carruselWidth, track) => {
+// 		if (leftPosition > 0) {
+// 			track.style.left = `${-1 * (leftPosition - carruselWidth)}px`;
+// 		}
+// 	}
 
-	let nextAction = (leftPosition, trackWidth, listWidth, carruselWidth, track) => {
-		if (leftPosition < (trackWidth - listWidth)) {
-			track.style.left = `${-1 * (leftPosition + carruselWidth)}px`;
-		}
-	}
+// 	let nextAction = (leftPosition, trackWidth, listWidth, carruselWidth, track) => {
+// 		if (leftPosition < (trackWidth - listWidth)) {
+// 			track.style.left = `${-1 * (leftPosition + carruselWidth)}px`;
+// 		}
+// 	}
+
+const carouselImages = document.querySelectorAll('.carousel img');
+let currentIndex = 0;
+
+function showImage(index) {
+  carouselImages.forEach((image, i) => {
+    if (i === index) {
+      image.classList.add('active');
+    } else {
+      image.classList.remove('active');
+    }
+  });
+}
+
+function nextImage() {
+  currentIndex++;
+  if (currentIndex >= carouselImages.length) {
+    currentIndex = 0;
+  }
+  showImage(currentIndex);
+}
+
+setInterval(nextImage, 3000); // Cambia la imagen cada 3 segundos
+
+// Mostrar la primera imagen al cargar la página
+showImage(currentIndex);
+
 
 (function($) {
 
