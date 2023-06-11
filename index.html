@@ -107,7 +107,7 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Contactenos</h2>
-							<form method="post" action="#">
+							<form action="https://formsubmit.co/informacion@lanotaeconomica.co" method="POST" autocomplete="off">
 								<div class="fields">
 									<div class="field">
 										<label for="name">Nombre*</label>
@@ -121,9 +121,11 @@
 										<label for="message">Mensaje*</label>
 										<textarea name="message" id="message" rows="4" required></textarea>
 									</div>
+									<input type="hidden" name="_next" value="https://investigacion-landing-page.vercel.app/">
+									<input type="hidden" name="_captcha" value="false">
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Enviar" /></li>
+									<li><input type="submit" value="Enviar"/></li>
 								</ul>
 							</form>
 							<ul class="contact">
