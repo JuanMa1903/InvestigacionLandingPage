@@ -43,6 +43,19 @@
   }
 
   @media(max-width:882px){
+
+	.cliente h2 {
+		font-size: 16.5px;
+		line-height: 38px;
+		padding-bottom: 50px;
+		opacity: .9;
+		text-transform: uppercase;
+		font-weight: 600;
+		text-align: center;
+		color: #ffffff;
+	}
+	
+
 	.carousel {
 		width: 100%; /* Ajusta el ancho según tus necesidades */
 		height: 150px; /* Ajusta la altura según tus necesidades */
